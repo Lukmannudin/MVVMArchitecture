@@ -11,12 +11,15 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.oleg.mvvmarchitecture"
-        minSdkVersion 24
+        minSdkVersion 22
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_KEY", "\"f4b2cbaa866199abcaa2bf40005dafcc\""
+        buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/\""
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -47,5 +50,12 @@ dependencies {
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutinesAdapterVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2Version"
+
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2Version"
+
+    implementation "com.jakewharton.timber:timber:$timberVersion"
 
 }
